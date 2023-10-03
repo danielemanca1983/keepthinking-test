@@ -1,0 +1,375 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "DINProBold";
+  src: url("../fonts/DINProBold.otf") format("opentype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "DINProRegular";
+  src: url("../fonts/DINProRegular.otf") format("opentype");
+  font-weight: normal;
+}
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.pb-60 {
+  padding-bottom: 60px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #979797;
+}
+
+.link {
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+}
+.link span {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+.link:hover span {
+  transform: translateX(5px);
+}
+
+body {
+  font-size: 20px;
+  padding: 0 20px;
+  color: #222222;
+  font-family: "DINProRegular";
+}
+
+h1 {
+  font-family: "DINProRegular", sans-serif;
+}
+
+h2, h3 {
+  font-family: "DINProBold", sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  padding: 20px 0;
+  display: flex;
+  align-items: ce;
+  justify-content: space-between;
+}
+header h1 a {
+  color: #222;
+}
+header .controls {
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+header .search-field {
+  background-color: transparent;
+  background-image: url("/images/search-outline.svg");
+  background-position: 5px center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  margin: 3px 0;
+  padding: 0 0 0 34px;
+  position: relative;
+  transition: width 400ms ease, background 400ms ease;
+  width: 0px;
+  cursor: pointer;
+}
+header .search-field:focus {
+  background-color: white;
+  border: 2px solid black;
+  cursor: text;
+  outline: 0;
+  width: 250px;
+  color: black;
+}
+header .search-form .search-submit {
+  display: none;
+}
+header .hamburger {
+  margin-left: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.overlay {
+  height: 80%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  box-shadow: 0 5px 7px 2px black;
+}
+
+.overlay-nav {
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  text-align: left;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 57px;
+  color: #222222;
+  display: block;
+  transition: 0.3s;
+  border-bottom: 1px solid #979797;
+}
+
+.overlay a:hover, .overlay a:focus {
+  text-decoration: underline;
+}
+
+.overlay .close-btn {
+  top: 20px;
+  right: 45px;
+  z-index: 100;
+  font-size: 60px;
+  position: absolute;
+  border-bottom: none;
+}
+
+.slider {
+  border-bottom: 1px solid #979797;
+}
+
+.slider-container {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-image {
+  width: 100%;
+  height: 600px;
+  display: none;
+}
+
+.caption-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.caption {
+  display: none;
+  padding: 5px 10px;
+  font-size: 24px;
+  text-align: left;
+}
+.caption__title {
+  font-family: "DINProBold";
+}
+
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px 0;
+}
+
+.indicator {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #B0B0B0;
+  border-radius: 50%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.indicator.active {
+  background-color: #FF5C5C;
+}
+
+.top {
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-between;
+}
+
+.news__articles-container {
+  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.news__article a:hover .news__article__image {
+  transform: scale(1.02);
+}
+.news__article a:hover .news__article__title {
+  text-decoration: underline;
+}
+.news__article__image {
+  transition: all 0.3s ease;
+  border: 1px solid #979797;
+}
+.news__article__title {
+  transition: all 0.3s ease;
+}
+.news__article__title, .news__article__date, .news__article__description {
+  min-height: 20px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.video-container .video {
+  padding: 0;
+  height: 530px;
+}
+.video-container .info {
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-between;
+}
+.video-container .info h3, .video-container .info p {
+  width: 45%;
+}
+
+.artist-list-container {
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.artist-list-container .artist-list {
+  line-height: 2;
+}
+.artist-list-container .artist-list a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  font-size: 20px;
+  line-height: 2;
+  padding: 0 20px;
+  color: white;
+  background-color: #424242;
+}
+footer .footer__top-nav {
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+  border-bottom: 1px solid #979797;
+  justify-content: space-between;
+}
+footer .footer__top-nav__left, footer .footer__top-nav__right {
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer__top-nav__left a {
+  color: white;
+  margin-right: 20px;
+  font-size: 24px;
+  font-family: "DINProBold";
+}
+footer .footer__top-nav__right img[src$=".svg"] {
+  width: 36px;
+  height: 36px;
+}
+footer .gallery-info {
+  padding: 20px 0;
+}
+footer .copyright {
+  padding: 15px 0;
+  color: #979797;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .slider-image {
+    height: 200px;
+  }
+  .caption {
+    font-size: 16px;
+  }
+  .indicators {
+    display: none;
+  }
+  .news__articles-container {
+    grid-template-columns: 1fr;
+  }
+  .news__article__title, .news__article__date, .news__article__description {
+    min-height: 20px;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .video-container .video {
+    height: 200px;
+  }
+  .video-container .info {
+    display: flex;
+    flex-direction: column;
+  }
+  .video-container .info h3, .video-container .info p {
+    width: 100%;
+  }
+  .artist-list-container {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+  .artist-list-container .artist-list {
+    line-height: 2;
+  }
+  .artist-list-container .artist-list a:hover {
+    text-decoration: underline;
+  }
+  footer {
+    font-size: 16px;
+  }
+  footer .footer__top-nav__left {
+    flex-direction: column;
+  }
+  footer .footer__top-nav__left a {
+    font-size: 16px;
+  }
+}/*# sourceMappingURL=style.css.map */
